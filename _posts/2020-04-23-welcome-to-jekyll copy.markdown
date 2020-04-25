@@ -6,24 +6,26 @@ categories: 代码
 abstract: 针对中文,演示Markdown的各种语法
 
 ---
+
 针对中文,演示Markdown的各种语法
   
 ### 小标题
-  小标题类似html的\<h3\><br />
-  小标题的格式如下 ### 小标题<br />
-  注意#和标题字符中间要有空格
+小标题类似html的\<h3\><br />
+小标题的格式如下 ### 小标题<br />
+注意#和标题字符中间要有空格
 ### 标题的等级表示法
-	关于标题的等级表示法，共分为六个等级，显示的文本大小依次减小。不同等级之间以井号#的个数来标识。一级标题有一个#，二级标题有两个#，以此类推。
-		#一级标题
-		##二级标题
-		###三级标题
-		####四级标题
-		#####五级标题
-		######六级标题
+关于标题的等级表示法，共分为六个等级，显示的文本大小依次减小。不同等级之间以井号#的个数来标识。一级标题有一个#，二级标题有两个#，以此类推。
+
+	#一级标题
+	##二级标题
+	###三级标题
+	####四级标题
+	#####五级标题
+	######六级标题
 ### 注意!!!下面所有语法的提示我都先用小标题提醒了!!! 
 
 ### 单行文本框
-    这是一个单行的文本框,只要两个Tab再输入文字即可
+这是一个单行的文本框,只要两个Tab再输入文字即可
         
 ### 多行文本框  
     这是一个有多行的文本框
@@ -77,21 +79,20 @@ abstract: 针对中文,演示Markdown的各种语法
 ### 部分文字的高亮
 如果你想使一段话部分文字高亮显示，来起到突出强调的作用，那么可以把它用\`\`包围起来。
 注意这不是单引号，而是Tab键和数字1键左边的按键（注意使用英文输入法）。<br />
-	example：
-		Thank`You`. Please `Call` Me `Coder`
+		example：Thank`You`. Please `Call` Me `Coder`
 ### 代码片段高亮显示
 GitHub的markdown语法还支持部分语言的代码片段高亮显示。只需要在代码的上一行和下一行用\`\`\`标记。
 ```Java
 	public static void main(String[] args){} //Java
 ```
 ```c
-	int main(int argc,char *argv[]) //C
+int main(int argc,char *argv[]) //C
 ```
 ```javascript
-	document.getElementById("myH1").innerHTML="Welcome to my Homepage";//javascript
+document.getElementById("myH1").innerHTML="Welcome to my Homepage";//javascript
 ```
 ```cpp
-	string &operator+(const string& A,const string& B) //cpp
+string &operator+(const string& A,const string& B) //cpp
 ```
 	
 ### list列表条目使用

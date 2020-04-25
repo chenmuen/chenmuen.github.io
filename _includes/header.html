@@ -3,25 +3,33 @@
     <div class="container-center">
         <div class="header-content">
             <div class="nav-bar">
-                <h1 class="logo">Mlog</h1>
+                <h1 class="logo"><a href="/" class="implicit-link">Mlog</a></h1>
                 <div class="filler"></div>
                 <nav class="navigation">
-                    <a href="/posts" class="nav-link {%if page.url == '/posts/'%} nav-link-active {%endif%}">POSTS</a>
+                    <a href="/" class="nav-link {%if page.url == '/'%} nav-link-active {%endif%}">POSTS</a>
                     <a href="/about" class="nav-link {%if page.url == '/about/'%} nav-link-active {%endif%}">ABOUT</a>
                     <a href="/friends" class="nav-link {%if page.url == '/friends/'%} nav-link-active {%endif%}">FRIENDS</a>
                 </nav>
             </div>
             <div class="header-title">
                 {% case page.slogan %}
-                    {% when null, "self-intro-english" %}
+                    {% when null, "self-intro-chinese" %}
+                        <p>你好，我是</p>
+                        <p><span class="orange">陈沐恩</span>,</p>
+                        <p>一个来自地球的<span class="blue">开发者</span>...</p>
+                    {% when "about-me" %}
+                        <p>关于<span class="orange">我</span></p>
+                        <p>的一些<span class="blue">事情</span></p>
+                        <p><span class="orange">你</span>也许可以了解一下...</p>
+                    {% when "friends" %}
+                        <p>比起<span class="orange">我</span></p>
+                        <p>我觉得<span class="orange">你</span>更应该看看</p>
+                        <p>我的大佬<span class="blue">朋友</span>们...</p>
+                    {% when "self-intro-english" %}
                         <p>Hi Forks, I Am</p>
                         <p><span class="orange">Muen</span>,</p>
                         <p>A <span class="blue">Developer</span> From</p>
                         <p>Planet Earth...</p>
-                    {% when "self-intro-chinese" %}
-                        <p>你好，我是</p>
-                        <p><span class="orange">陈沐恩</span>,</p>
-                        <p>一个来自地球的<span class="blue">开发者</span>...</p>
                     {% else %}
                         <p>{{include.intro}}</p>
                 {% endcase %}

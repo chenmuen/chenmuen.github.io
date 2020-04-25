@@ -45,6 +45,17 @@ body,td,th {
     max-width: 800px;
 }
 
+.implicit-link {
+    transition: all 0.2s;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        transition: all 0.2s;
+        color: $color-orange;
+    }
+}
+
 .filler {
     flex-grow: 1;
 }
@@ -135,7 +146,7 @@ footer {
 
     HR {
         margin: 10px;
-        width: 350px;
+        width: 250px;
     }
 
     ul.contact {
@@ -144,7 +155,8 @@ footer {
         @include remove-list-style;
 
         .contact-item {
-            margin: 0 10px
+            margin: 0 10px;
+            font-size: 1.2em;
         }
     }
 }
@@ -163,21 +175,12 @@ ul.post-list {
 
 .article {
     padding: 70px 0;
+    width: 100%;
 }
 
 .post-title {
     margin-bottom: 15px;
     font-size: 28px;
-
-    .post-title-link {
-        color: $font-color;
-        text-decoration: none;
-
-        &:hover {
-            color: $color-orange;
-            text-decoration: underline;
-        }
-    }
 }
 
 .post-excerpt {
@@ -198,20 +201,37 @@ ul.post-info-list {
         color: $font-color-grey;
 
         &:not(:first-child)::before {
-            content: '•';
+            content: "";
+            $radius: 2px;
             margin: 0 10px;
-            font-size: 5px;
+            width: $radius;
+            height: $radius;
+            border-radius: $radius;
+            background-color: $font-color-grey;
         }
     }    
 }
 
 .post-content {
     margin-top: 15px;
-    margin-bottom: 30px;
     line-height: 1.5em;
 }
 
 ul.paginator {
+    @include remove-list-style;
+
     display: flex;
-    @include remove-list-style
+    margin-top: 60px;
+}
+
+// Markdown Style
+blockquote {
+    margin: 1em 0;
+    border-left: solid 2px lighten($primary-color, 20%);
+    color: lighten($primary-color, 20%);
+    padding: 0 1em;
+}
+
+pre.highlight {
+    overflow-x: auto ;
 }

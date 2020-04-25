@@ -1,7 +1,18 @@
 ---
 layout: default
-title: Home
+title: Posts
+
 ---
 
-<h1>Hello World</h1>
-
+<ul class="post-list">
+    {% for post in site.posts %}
+    <li class="post-item">
+        <h3 class="post-title"><a href="{{post.url}}" class="post-title-link implicit-link">{{post.title}}</a></h3>
+        <div class="post-excerpt">{{post.excerpt | strip_html | truncate: 200}} <a href="{{post.url}}">详情</a> </div>
+        <ul class="post-info-list">
+            <li class="post-info-item">{{ post.date | date_to_string}}</li>
+            <li class="post-info-item">{{ post.categories}}</li>
+        </ul>
+    </li>
+    {% endfor %}
+</ul>

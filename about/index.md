@@ -1,7 +1,7 @@
 ---
 layout: article
 title: 关于我
-slogan: self-intro-chinese
+slogan: about-me
 permalink: /about/
 ---
 
