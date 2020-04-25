@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="article">
+    <h3 class="post-title">{{page.title}}</h3>
+    {%if page.categories%}
+    <ul class="post-info-list">
+        <li class="post-info-item">{{ page.date | date_to_string}}</li>
+        <li class="post-info-item">{{ page.categories}}</li>
+    </ul>
+    {%endif%}
+    <div class="post-content">
+        {{content}}
+    </div>
+
+    <ul class="paginator">
+        <li class="paginator-next">
+            {%if page.next %}
+            <a href="{{page.next.url}}"><< {{page.next.title}}</a>
+            {%endif%}
+        </li>
+        <div class="filler"></div>
+        <li class="paginator-previous">
+            {%if page.previous %}
+            <a href="{{page.previous.url}}">{{page.previous.title}} >></a>
+            {%endif%}
+        </li>
+    </ul>
+</div>
