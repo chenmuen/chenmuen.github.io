@@ -1,4 +1,9 @@
-@font-face {
-    font-family: 'Brush Script MT';
-    src: url('/assets/font/Brush\ Script.ttf') format("truetype");
-}
+@include font-face('Brush Script MT', '/assets/font/Brush\ Script', normal, normal, ttf);
+
+@include font-face('Avenir', '/assets/font/Avenir/Avenir-Book-01', normal, normal, ttf);
+@include font-face('Avenir', '/assets/font/Avenir/Avenir-BookOblique-02', normal, italic, ttf);
+@include font-face('Avenir', '/assets/font/Avenir/Avenir-Heavy-05', bold, normal, ttf);
+@include font-face('Avenir', '/assets/font/Avenir/Avenir-HeavyOblique-06', bold, italic, ttf);
+@include font-face('Avenir', '/assets/font/Avenir/Avenir-Light-07', light, normal, ttf);
+@include font-face('Avenir', '/assets/font/Avenir/Avenir-LightOblique-08', light, italic, ttf);
+
