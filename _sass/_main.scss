@@ -41,6 +41,10 @@ ul {
     padding-left: 1em;
 }
 
+img {
+    max-width: 100%;
+}
+
 // General Component
 .container-center {
     margin: 0 auto;
@@ -110,7 +114,7 @@ header .header-content {
         }
     
         .navigation {
-            padding: 5px 0;
+            padding: 10px 0;
     
             .nav-link {
                 margin-right: 10px;
