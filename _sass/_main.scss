@@ -102,38 +102,11 @@ header .header-content {
     z-index: 2;
     color: $font-color-white;
 
-    .nav-bar {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-
-        .logo {
-            margin: 0;
-            font-size: 48px;
-            font-family: Brush Script MT;
-        }
-    
-        .navigation {
-            padding: 10px 0;
-    
-            .nav-link {
-                margin-right: 10px;
-    
-                font-size: 14px;
-                color: $font-color-white;
-                text-decoration: none;
-    
-                &.nav-link-active, &:hover {
-                    border-bottom: solid 1px $font-color-white;
-                }
-            }
-        }
-    }
-
     .header-title {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: flex-start;
         flex-grow: 1;
         width: 100%;
         font-size: 30px;
@@ -141,6 +114,43 @@ header .header-content {
         line-height: 1.5em;
         // text-transform:uppercase;
     }
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    .logo {
+        margin: 0;
+        font-size: 48px;
+        font-family: Brush Script MT;
+    }
+
+    .navigation {
+        padding: 10px 0;
+
+        .nav-link {
+            margin-right: 10px;
+
+            font-size: 14px;
+            color: $font-color-white;
+            text-decoration: none;
+
+            &.nav-link-active, &:hover {
+                border-bottom: solid 1px $font-color-white;
+            }
+        }
+    }
+}
+
+.fixed-navbar {
+    opacity : 0;
+    position: fixed;
+    width: 100%;
+    padding: 10px 0 ;
+    background-color: $primary-color;
+    color: $color-white
 }
 
 // Footer
