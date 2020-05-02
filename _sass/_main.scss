@@ -231,7 +231,11 @@ ul.post-info-list {
 
 .post-content {
     margin-top: 15px;
-    line-height: 1.5em;
+    line-height: 2em;
+
+    p {
+        margin-bottom: 1em;
+    }
 }
 
 ul.paginator {
