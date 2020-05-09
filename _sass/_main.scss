@@ -13,12 +13,20 @@ $divider-color: lightgrey;
 
 $background-color: $color-white;
 
-// Basic Style
+$base-font-size: 16px;
 
+// Functions
+@function calculateRem($size) {
+    $remSize: $size / $base-font-size;
+    @return #{$remSize}rem;
+}
+
+// Basic Style
 // Remove scrollBar width
 html {
     margin: 0;
     padding: 0;
+    font-size: $base-font-size;
     overflow-y: overlay;
 }
 
@@ -30,9 +38,10 @@ a {
     color: $color-orange
 }
 
-body,td,th {
+body,
+td,
+th {
     font-family: Avenir, Arial;
-    font-size: 16px;
     color: $font-color;
     background-color: $background-color;
 }
@@ -48,8 +57,8 @@ img {
 // General Component
 .container-center {
     margin: 0 auto;
-    padding: 0 30px;
-    max-width: 800px;
+    padding: 0 calculateRem(30px);
+    max-width: calculateRem(800px);
 }
 
 .implicit-link {
@@ -96,8 +105,8 @@ header {
 header .header-content {
     display: flex;
     flex-direction: column;
-    padding-top: 30px;
-    height: 400px;
+    padding-top: calculateRem(30px);
+    height: calculateRem(400px);
     position: relative;
     z-index: 2;
     color: $font-color-white;
@@ -108,8 +117,7 @@ header .header-content {
         justify-content: center;
         align-items: flex-start;
         flex-grow: 1;
-        width: 100%;
-        font-size: 30px;
+        font-size: calculateRem(30px);
         font-weight: bold;
         line-height: 1.5em;
         // text-transform:uppercase;
@@ -123,21 +131,22 @@ header .header-content {
 
     .logo {
         margin: 0;
-        font-size: 48px;
+        font-size: calculateRem(48px);
         font-family: Brush Script MT;
     }
 
     .navigation {
-        padding: 10px 0;
+        padding: calculateRem(10px) 0;
 
         .nav-link {
             margin-right: 10px;
 
-            font-size: 14px;
+            font-size: calculateRem(14px);
             color: $font-color-white;
             text-decoration: none;
 
-            &.nav-link-active, &:hover {
+            &.nav-link-active,
+            &:hover {
                 border-bottom: solid 1px $font-color-white;
             }
         }
@@ -145,10 +154,10 @@ header .header-content {
 }
 
 .fixed-navbar {
-    opacity : 0;
+    opacity: 0;
     position: fixed;
     width: 100%;
-    padding: 10px 0 ;
+    padding: calculateRem(10px) 0;
     background-color: $primary-color;
     color: $color-white
 }
@@ -159,11 +168,11 @@ footer {
     flex-direction: column;
     align-items: center;
 
-    margin: 50px 0;
+    margin: calculateRem(50px) 0;
 
     HR {
-        margin: 10px;
-        width: 250px;
+        margin: calculateRem(10px);
+        width: calculateRem(250px);
     }
 
     ul.contact {
@@ -172,8 +181,8 @@ footer {
         @include remove-list-style;
 
         .contact-item {
-            margin: 0 10px;
-            font-size: 1.2em;
+            margin: 0 calculateRem(10px);
+            font-size: 1.2rem;
         }
     }
 }
@@ -183,7 +192,8 @@ ul.post-list {
     @include remove-list-style;
 
     li.post-item {
-        padding: 70px 0;
+        padding: calculateRem(70px) 0;
+
         &:not(:first-child) {
             border-top: solid 2px $divider-color;
         }
@@ -191,17 +201,18 @@ ul.post-list {
 }
 
 .article {
-    padding: 70px 0;
+    padding: calculateRem(70px) 0;
     width: 100%;
 }
 
 .post-title {
-    margin-bottom: 15px;
-    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: calculateRem(15px);
+    font-size: calculateRem(28px);
 }
 
 .post-excerpt {
-    margin-bottom: 15px;
+    margin-bottom: calculateRem(15px);
     line-height: 1.5em;
 }
 
@@ -220,21 +231,21 @@ ul.post-info-list {
         &:not(:first-child)::before {
             content: "";
             $radius: 2px;
-            margin: 0 10px;
+            margin: 0 calculateRem(10px);
             width: $radius;
             height: $radius;
             border-radius: $radius;
             background-color: $font-color-grey;
         }
-    }    
+    }
 }
 
 .post-content {
-    margin-top: 15px;
+    margin-top: calculateRem(15px);
     line-height: 2em;
 
     p {
-        margin-bottom: 1em;
+        margin-bottom: 1rem;
     }
 }
 
@@ -242,17 +253,23 @@ ul.paginator {
     @include remove-list-style;
 
     display: flex;
-    margin-top: 60px;
+    margin-top: calculateRem(60px);
 }
 
 // Markdown Style
 blockquote {
-    margin: 1em 0;
+    margin: 1rem 0;
     border-left: solid 2px lighten($primary-color, 20%);
     color: lighten($primary-color, 20%);
-    padding: 0 1em;
+    padding: 0 1rem;
 }
 
 pre.highlight {
-    overflow-x: auto ;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
 }
